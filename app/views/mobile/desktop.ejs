@@ -1,0 +1,51 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-maytinh-mb">
+          <div class="tabslink">
+            <a href="/lap-top" class="">
+                laptop
+            </a>
+            <a href="/may-tinh-de-ban" class="active">
+                Máy tính bộ <br> Màn hình
+            </a>
+            <a href="phu-kien" class="">
+                Phụ kiện
+            </a>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wrapper-product-mb">
+        <div class="choosedfilter">
+          <a href="/lap-top">Máy tính để bàn
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% for(var i=0;i<laptop.count;i++){ %>
+              <li class="item" >
+            <a href="/lap-top/<%=laptop.laptops[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=laptop.laptops[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=laptop.laptops[i].name %></h3>
+                    <div class="price maytinhdeban commas">
+                        <strong><%=laptop.laptops[i].price %>₫</strong>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=laptop.laptops[i].nameseo %>" class="btn_buynow">Xem Ngay</a>
+                </div>
+              </li>
+            <% } %>
+        </ul>
+
+
+      </div>
+    </div>
+
+  </div>

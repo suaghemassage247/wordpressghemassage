@@ -1,0 +1,158 @@
+<div class="banner">
+  <div class="slide-banner">
+    <aside class="slideshow">
+      <div id="sync1" class="owl-carousel">
+
+          <div class="item">
+            <img src="https://cf.shopee.vn/file/eeb71530ff9b1e4069f2b3de65616b99_xxhdpi">
+          </div>
+          <div class="item">
+            <img src="https://cf.shopee.vn/file/eeb71530ff9b1e4069f2b3de65616b99_xxhdpi">
+          </div>
+      </div>
+      <div id="sync2" class="owl-carousel ">
+
+          <div class="item">
+            <h3 class="title-slide">8/3 sale thả ga</h3>
+          </div>
+          <div class="item">
+            <h3 class="title-slide">8/3 sale thả ga</h3>
+          </div>
+      </div>
+    </aside>
+  </div>
+  <div class="banner-fix">
+    <div class="banner1">
+      <a href=""><img src="https://cf.shopee.vn/file/1057eb6f1023df3b2401211e9221b690_xhdpi"></a>
+    </div>
+    <div class="banner2">
+            <a href=""><img src="https://cf.shopee.vn/file/1057eb6f1023df3b2401211e9221b690_xhdpi"></a>
+    </div>
+  </div>
+</div>
+<div class="contain-detail">
+  <div class="list-danhmuc">
+    <div class="text-danhmuc">DANH MỤC</div>
+    <ul>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="https://cf.shopee.vn/file/c3f3edfaa9f6dafc4825b77d8449999d_tn" alt="">
+          </div>
+          <div class="text-item">
+              <a href="#">Laptop</a>
+          </div>
+      </li>
+
+
+
+    </ul>
+  </div>
+</div>
+
+
+
+<table class="admin">
+  <thead>
+    <tr>
+      <th>Tên sản phẩm</th>
+      <th>Giá</th>
+      <th>Hình ảnh</th>
+      <th>Bảo hành</th>
+      <th>Tiêu đề</th>
+      <th>Mô tả sản phẩm</th>
+      <th>Sửa</th>
+      <th>Xóa</th>
+      <th>add to cart</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for(var i=0;i<cameraall.count;i++){ %>
+      <tr>
+      <td> <%=cameraall.cameras[i].name %> </td>
+      <td> <%=cameraall.cameras[i].price %> </td>
+      <td class="image-response"><img src=/<%=cameraall.cameras[i].image %> >  </td>
+      <td> <%=cameraall.cameras[i].baohanh %> </td>
+      <td><%-cameraall.cameras[i].title %>  </td>
+      <td><%-cameraall.cameras[i].description %>  </td>
+      <td><a href="/camera/edit/<%=cameraall.cameras[i]._id %>">Sửa</a></td>
+      <td><a class="delete-camera" data-id="<%=cameraall.cameras[i]._id %>">Xóa</a></td>
+      <td><a href="/cart/add-to-cart/<%=cameraall.cameras[i]._id %>" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a></td>
+      </tr>
+    <% } %>
+
+
+  </tbody>
+</table>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/camera/edit/<%=camera._id%>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Tên sản phẩm</label>
+        <input type="text" name="name" placeholder="Nhập tên sản phẩm" value="<%=camera.name%>"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tên seo</label>
+        <input type="text" name="nameseo" placeholder="Nhập tên seo" value="<%=camera.nameseo%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>NSX</label>
+        <input type="text" name="nsx" placeholder="Nhập nhà sản xuất" value="<%=camera.nsx%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Giá </label>
+        <input type="text" name="price" placeholder="Nhập Giá" value="<%=camera.price%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Bảo hành </label>
+        <input type="text" name="baohanh" placeholder="Bảo hành" value="<%=camera.baohanh%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Mô tả ngắn</label>
+        <textarea id="shortdescription" name="sortdescription" placeholder="Nhập Mô tả" ><%=camera.sortdescription%></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Mô tả dài</label>
+        <textarea id="description" name="description" placeholder="Nhập Mô tả" ><%=camera.description%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Ảnh đại diện</label>
+        <input type="file" name="imagedefault" placeholder="Import Hình Ảnh" class="form-control"  multiple >
+      </div>
+      <div class="form-group">
+        <label>Bộ sưu tập ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple >
+      </div>
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

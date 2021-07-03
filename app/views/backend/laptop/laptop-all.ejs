@@ -1,0 +1,46 @@
+
+
+<div class="ghemassages-all">
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="/laptop/laptop-create">Thêm sản phẩm <i class="fa fa-plus"></i></a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên sản phẩm</th>
+        <th>Tên seo</th>
+        <th>Tên phân loại</th>
+        <th>NSX</th>
+        <th>Nhu cầu</th>
+        <th>Giá</th>
+        <th>Hình ảnh Default</th>
+        <th>Hình ảnh thumb</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.laptops[i].name %> </td>
+        <td> <%=response.laptops[i].nameseo %> </td>
+        <td> <%=response.laptops[i].phanloai %> </td>
+        <td> <%=response.laptops[i].nsx %> </td>
+        <td> <%=response.laptops[i].nhucau %> </td>
+        <td> <%=response.laptops[i].price %> </td>
+        <td class="image-response">
+          <%for(var n=0;n<response.laptops[i].imagedefault.length;n++){%>
+          <img src="/assest/image/<%=response.laptops[i].imagedefault[n].originalname%>"width="50" />
+          <%}%>
+        </td>
+        <td class="image-response">
+          <%for(var k=0;k<response.laptops[i].image.length;k++){%>
+          <img src="/assest/image/<%=response.laptops[i].image[k].originalname%>" width="50"/>
+          <%}%>
+        </td>
+        <td><a href="/laptop/edit/<%=response.laptops[i]._id %>">Sửa</a></td>
+        <td><a class="delete-laptop" data-id="<%=response.laptops[i]._id %>">Xóa</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

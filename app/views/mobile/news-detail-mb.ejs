@@ -1,0 +1,42 @@
+
+<section>
+    <div class="breadcrumb-mb">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+              <li class="breadcrumb-item service"><a href="/"><i class="fa fa-newspaper-o"></i> Tin tức</a></li>
+
+          </ol>
+      </nav>
+    </div>
+    <div class="wrap-newsdetail mb">
+      <h1 class="title-newsdetail"><%=postsdetail.post[0].title%></h1>
+      <div class="info-news-detail">
+        <span class="post-date"><i class="fa fa-clock-o"></i> <%=postsdetail.post[0].day%></span>
+      </div>
+      <div class="content-newsdetail mb">
+        <%-postsdetail.post[0].description%>
+      </div>
+    </div>
+    <aside>
+      <div class="suggest mb">
+          <figure class="template news">
+                    <figcaption>Tin liên quan</figcaption>
+                    <b></b>
+          </figure>
+          <div class="view-content">
+              <ul class="list-padding" style="">
+                <%for(var i=0;i<postsfilter.count;i++){%>
+                  <li class="">
+                    <h5>
+                      <a href="/<%-postsfilter.post[i].titleseo%>"><%=postsfilter.post[i].title%></a>
+                    </h5>
+                  </li>
+                <%}%>
+              </ul>
+          </div>
+      </div>
+    </aside>
+
+
+</section>

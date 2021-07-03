@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/danhmuc/edit/<%=danhmuc._id%>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Tên sản phẩm</label>
+        <input type="text" name="name" placeholder="Nhập tên sản phẩm" value="<%=danhmuc.name%>"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tên link</label>
+        <input type="text" name="link" placeholder="Nhập link" value="<%=danhmuc.link%>"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>ALT</label>
+        <input type="text" name="alt" placeholder="Nhập tên seo" value="<%=danhmuc.alt%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>index</label>
+        <input type="text" name="index" placeholder="Nhập index" value="<%=danhmuc.index%>"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple >
+      </div>
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

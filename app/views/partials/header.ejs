@@ -1,0 +1,53 @@
+<div class="header">
+  <div class="top-header">
+      <ul class="header-left">
+            <li class="active"><a href="#">Giới thiệu<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a hrefA"#">Vận chuyển</a></li>
+            <li><a href="#">Thanh toán</a></li>
+      </ul>
+      <div class="header-right">
+              <img src="/assest/image/call.png" alt="hotline">
+              <a href="tel:0989890248"> 09.89.89.0248</a>
+      </div>
+  </div>
+  <div class="top-header-2">
+    <div class="logo">
+          <img src="/assest/image/logo.png" alt="logo">
+    </div>
+    <div class="danhmuc">
+      <ul class="danhmuchot">
+            <li><a href="#">Camera<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Máy tính & Laptop</a></li>
+            <li><a href="#">Máy Photocopy</a></li>
+            <li><a href="#">Máy in</a></li>
+            <li><a href="#">Bách hóa online</a></li>
+            <li><a href="#">Thiết bị tiện ích</a></li>
+      </ul>
+      <div class="search">
+          <div class="form-search">
+              <input id="tbSearch" type="text" placeholder="Nhập từ khóa tìm kiếm theo sản phẩm, danh mục hay thương hiệu ..." onkeyup="CheckPostSearch(event)" onmouseover="checksuggest()">
+              <a  title="search" onclick="postSearch()">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+              <div class="suggest timkiem">
+                <ul class="pro-suggest">
+
+                </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="wrap-cart">
+      <a class="cart" href="/cart/shopping-cart" title="">
+            <span>Giỏ hàng:</span>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <%if(!session.cart){%>
+            <span class="so">0</span>
+            <%}else {%>
+                <span class="so"><%=session.cart.totalQty%></span>
+            <% } %>
+      </a>
+    </div>
+  </div>
+</div>

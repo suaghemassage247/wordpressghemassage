@@ -1,0 +1,97 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-maytinh-mb">
+          <div class="tabslink">
+            <a href="/lap-top" class="active">
+                laptop
+            </a>
+            <a href="/may-tinh-de-ban" class="">
+                Máy tính bộ <br> Màn hình
+            </a>
+            <a href="phu-kien" class="">
+                Phụ kiện
+            </a>
+          </div>
+          <div class="caption-lt">
+            <h2>Chọn laptop theo nhu cầu</h2>
+          </div>
+          <div class="lt-nhucau">
+            <a href="/laptop-hoc-tap-van-phong">
+              <img src="/assest/image/hoctap-vanphong.png" alt="Laptop học tập văn phòng" >
+            </a>
+            <a href="/laptop-do-hoa">
+              <img src="/assest/image/dohoa-kythuat.png" alt="Laptop đồ họa kỹ thuật" >
+            </a>
+            <a href="/laptop-gaming">
+              <img src="/assest/image/gaming.png" alt="Laptop chơi game" >
+            </a>
+            <a href="/laptop-cao-cap">
+                <img src="/assest/image/caocap-sangtrong.png" alt="Laptop cao cấp sang trọng" >
+            </a>
+            <a href="/laptop-mong-nhe">
+                <img src="/assest/image/mongnhe.png" alt="Laptop mỏng nhẹ" >
+            </a>
+          </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="caption-lt">
+        <h2>Chọn laptop theo Hãng Sản Xuất</h2>
+        <div class="lt-hang">
+          <a href="/laptopdell">
+            <img src="/assest/image/Dell.jpg" alt="Laptop Dell" >
+          </a>
+          <a href="/laptopasus">
+            <img src="/assest/image/Asus.jpg" alt="Laptop Asus" >
+          </a>
+          <a href="/laptophp">
+            <img src="/assest/image/Hp.jpg" alt="Laptop HP" >
+          </a>
+          <a href="/laptopacer">
+            <img src="/assest/image/Acer.jpg" alt="Laptop Acer" >
+          </a>
+          <a href="/laptoplenovo">
+            <img src="/assest/image/Lenovo.jpg" alt="Laptop Lenovo" >
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="wrapper-product-mb">
+        <div class="choosedfilter">
+          <a href="/maytinh">Laptop Mỏng Nhẹ
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% for(var i=0;i<laptop.count;i++){ %>
+              <li class="item" data-productid="214710">
+            <a href="/<%=laptop.laptops[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=laptop.laptops[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=laptop.laptops[i].name %></h3>
+                    <div class="price">
+                        <strong><%=laptop.laptops[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-laptop.laptops[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=laptop.laptops[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% } %>
+        </ul>
+
+
+      </div>
+    </div>
+
+  </div>

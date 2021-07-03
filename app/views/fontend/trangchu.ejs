@@ -1,0 +1,80 @@
+<div class="banner">
+  <div class="slide-banner">
+    <div class="image-banner">
+    </div>
+    <div class="content-banner">
+      <div class="title-content-banner">
+          TRUNG TÂM SỬA CHỮA GHẾ MASSAGE MIỀN BẮC
+      </div>
+      <div class="title-hotline">
+        TƯ VẤN & CSKH:
+        <a href="tel:0989890248"> 09.89.89.0248</a>
+      </div>
+      <div class="title-main-content">
+        Dịch vụ sửa chữa 24/7:
+      </div>
+      <div class="content-1">
+        	&rsaquo; Sửa chữa ghế massage : mạch, motor, dây curoa, điều khiển...
+      </div>
+      <div class="content-1">
+        	&rsaquo; Bọc lại da ghế massage, ghế sofa, nệm massage...
+      </div>
+      <div class="content-1">
+        	&rsaquo; Mua bán ghế massage cũ mới
+      </div>
+      <div class="content-1">
+        	&rsaquo;Tháo lắp, vận chuyển ghế massage theo yêu cầu
+      </div>
+      <div class="content-bottom">
+        &rarr;	Sửa Chữa Tại Nhà - Linh Kiện Chính Hãng - Bảo Hành Dài Lâu  	&larr;
+      </div>
+    </div>
+  </div>
+  <div class="banner-fix">
+    <div class="title-banner-right">
+      Cập Nhật Tin Tức Mới Nhất
+    </div>
+    <div class="content-right">
+      <ul class="list-tintuc">
+      <% for(var i=0;i<poststintuc.count;i++){ %>
+          <li>
+            	&rarr;  <a href="/<%=poststintuc.post[i].titleseo%>">
+                  <%=poststintuc.post[i].title%>
+               </a>
+          </li>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="contain-detail">
+  <div class="list-danhmuc">
+    <div class="text-danhmuc">DANH MỤC</div>
+    <ul>
+     <% for(var i=0;i<danhmucall.count;i++){ %>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="/assest/image/<%=danhmucall.danhmucs[i].image[0].originalname %>" alt="<%=danhmucall.danhmucs[i].alt %> ">
+          </div>
+          <div class="text-item">
+              <a href="/<%=danhmucall.danhmucs[i].link %>"><%=danhmucall.danhmucs[i].name %></a>
+          </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <div class="list-dich-vu">
+    <div class="title-dich-vu">
+      <p>DỊCH VỤ GHẾ MASSAGE MIỀN BẮC </p>
+    </div>
+    <ul class="list-item-dich-vu">
+          <% for(var i=0;i<poststintucghemassage.count;i++){ %>
+        <li>
+            &rarr;  <a href="/<%=poststintucghemassage.post[i].titleseo%>">
+                <%=poststintucghemassage.post[i].title%>
+             </a>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+</div>

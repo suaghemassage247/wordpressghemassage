@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thêm sản phẩm</title>
+  </head>
+  <body>
+    <form method="post" action="/camera/camera-create" enctype="multipart/form-data" >
+      <div class="form-group">
+        <label>Tên sản phẩm</label>
+        <input type="text" name="name" placeholder="Nhập tên sản phẩm" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tên  seo</label>
+        <input type="text" name="nameseo" placeholder="Nhập tên seo" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Giá</label>
+        <input type="text" name="price" placeholder="Giá" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tiêu đề</label>
+        <input type="text" name="title" placeholder="Nhập Tiêu đề" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Mô tả ngắn</label>
+        <textarea id="shortdescription" name="sortdescription" placeholder="Nhập Mô tả ngắn" class="form-control">mô tả ngắn </textarea>
+      </div>
+      <div class="form-group">
+        <label>Mô tả dài</label>
+        <textarea id="description" name="description" placeholder="Nhập Mô tả" class="form-control">Biên soạn bài viết </textarea>
+      </div>
+      <div class="form-group">
+        <label>Chọn nhà sản xuất</label>
+        <select name="nsx">
+          <option value="" selected disabled hidden>Chọn NSX</option>
+          <%for(var i=0; i<nsxs.count;i++){%>
+          <option value="<%=nsxs.nsx[i].name%>"><%=nsxs.nsx[i].name%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Thứ tự</label>
+        <input type="number" name="index" placeholder="Nhập thứ tự" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>hình ảnh đại diện</label>
+        <input type="file" name="imagedefault" placeholder="Import Hình Ảnh" class="form-control"  multiple>
+      </div>
+      <div class="form-group">
+        <label>Bộ sưu tập hình ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple>
+      </div>
+      <input type="submit" value ="Thêm">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thêm sản phẩm</title>
+  </head>
+  <body>
+    <form method="post" action="/danhmuc/danhmuc-create" enctype="multipart/form-data" >
+      <div class="form-group">
+        <label>Tên danh mục</label>
+        <input type="text" name="name" placeholder="Nhập tên sản phẩm" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Link</label>
+        <input type="text" name="link" placeholder="Nhập Link" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>ALT</label>
+        <input type="text" name="alt" placeholder="Nhập tên seo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Thứ tự</label>
+        <input type="number" name="index" placeholder="Nhập thứ tự" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Bộ sưu tập hình ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple>
+      </div>
+      <input type="submit" value ="Thêm">
+    </form>
+  </body>
+</html>

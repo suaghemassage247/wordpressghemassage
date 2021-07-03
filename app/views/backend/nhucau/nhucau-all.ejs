@@ -1,0 +1,35 @@
+
+
+  <h2>Danh sách nhucau</h2>
+    <h2>Tổng số nhucau <%=nhucaus.count%></h2>
+    <a href="/nhucau/nhucau-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên nhucau</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    <% for(var i=0;i<nhucaus.count;i++){ %>
+        <tr>
+        <td> <%=nhucaus.nhucau[i].name %> </td>
+
+        <td><a href="/nhucau/edit/<%=nhucaus.nhucau[i]._id %>">Sửa</a></td>
+        <td><a class="delete-nhucau" data-id="<%=nhucaus.nhucau[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

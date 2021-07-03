@@ -1,0 +1,45 @@
+<div class="banner">
+  <div class="slide-banner">
+    <aside class="slideshow">
+      <div id="sync1" class="owl-carousel">
+        <% for(var k=0;k<slideall.count;k++){ %>
+
+          <div class="item">
+            <img src="assest/image/<%=slideall.slides[0].image %>" >
+          </div>
+        <% } %>
+      </div>
+      <div id="sync2" class="owl-carousel ">
+        <% for(var h=0;h<slideall.count;h++){ %>
+          <div class="item">
+            <h3 class="title-slide"><%=slideall.slides[h].title%></h3>
+          </div>
+          <% } %>
+      </div>
+    </aside>
+  </div>
+  <div class="banner-fix">
+    <% for(var i=0;i<bannerfixall.count;i++) {%>
+    <div class="banner1">
+      <a href=""><img src="assest/image/<%=bannerfixall.banners[i].image%>"></a>
+    </div>
+   <% } %>
+  </div>
+</div>
+<div class="contain-detail">
+  <div class="list-danhmuc">
+    <div class="text-danhmuc">DANH MỤC</div>
+    <ul>
+     <% for(var i=0;i<danhmucall.count;i++){ %>
+      <li class="item-danhmuc">
+          <div class="image-item">
+              <img src="/assest/image/<%=danhmucall.danhmucs[i].image[0].originalname %>" alt="<%=danhmucall.danhmucs[i].alt %> ">
+          </div>
+          <div class="text-item">
+              <a href="<%=danhmucall.danhmucs[i].link %>"><%=danhmucall.danhmucs[i].name %></a>
+          </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>

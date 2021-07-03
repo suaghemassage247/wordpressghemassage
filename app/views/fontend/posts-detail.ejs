@@ -1,0 +1,40 @@
+<div class="back-trangchu">
+  <a href="/">Trang Chủ | </a> <span> Tin tức dịch vụ</span>
+</div>
+<div class="postdetail">
+  <div class="wrap-newsdetail ">
+    <h1 class="title-newsdetail"><%=postsdetail.post[0].title%></h1>
+    <div class="info-news-detail">
+      <span class="category-news"><%=postsdetail.post[0].typepost%></span>
+      | <span class="post-date"> <%=postsdetail.post[0].day%></span>
+
+    </div>
+    <div class="content-newsdetail">
+        <%-postsdetail.post[0].description%>
+    </div>
+  </div>
+  <div class="tinlienquan">
+    <div class="wraptinlienquan">
+      <aside class="">
+            <div class="suggest aside-right-postdetail ">
+                            <figure class="template news ">
+                                      <figcaption>Tin liên quan</figcaption>
+                                      <b></b>
+                            </figure>
+                            <div class="view-content">
+                              <ul class="list-padding">
+                                <%for(var i=0;i<postsfilter.count;i++){%>
+                                  <li class="">
+                                    <h5>
+                                      <a href="/<%=postsfilter.post[i].titleseo%>"><%=postsfilter.post[i].title%></a>
+                                    </h5>
+                                  </li>
+                                <%}%>
+                              </ul>
+                            </div>
+            </div>
+      </aside>
+    </div>
+
+  </div>
+</div>

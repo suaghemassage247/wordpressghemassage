@@ -1,0 +1,51 @@
+
+<div class="ds">
+  <ul class='list-item'>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+
+  </ul>
+</div>
+<div class="ghemassages-all">
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="/mayvp/mayvp-create">Thêm sản phẩm <i class="fa fa-plus"></i></a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên ghế</th>
+        <th>Tên Seo</th>
+        <th>NSX</th>
+        <th>Giá gốc</th>
+        <th>Tiêu đề</th>
+        <th>Hình ảnh Default</th>
+        <th>Hình ảnh thumb</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.mayvps[i].name %> </td>
+        <td> <%=response.mayvps[i].nameseo %> </td>
+        <td> <%=response.mayvps[i].nsx %> </td>
+        <td> <%=response.mayvps[i].price %> </td>
+        <td><%-response.mayvps[i].title %>  </td>
+        <td class="image-response">
+          <%for(var n=0;n<response.mayvps[i].imagedefault.length;n++){%>
+          <img src="/assest/image/<%=response.mayvps[i].imagedefault[n].originalname%>"width="50" />
+          <%}%>
+        </td>
+        <td class="image-response">
+          <%for(var k=0;k<response.mayvps[i].image.length;k++){%>
+          <img src="/assest/image/<%=response.mayvps[i].image[k].originalname%>" width="50"/>
+          <%}%>
+        </td>
+        <td><a href="/mayvp/edit/<%=response.mayvps[i]._id %>">Sửa</a></td>
+        <td><a class="delete-mayvp" data-id="<%=response.mayvps[i]._id %>">Xóa</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

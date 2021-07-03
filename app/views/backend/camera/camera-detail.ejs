@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=doc.name%></title>
+  </head>
+  <body>
+    <ul>
+
+        <li> <%=doc.name%> </li>
+        <li> <%=doc.nsx%> </li>
+        <li> <%=doc.price%> </li>
+        <li><%=doc.title%></li>
+        <li><%=doc.sortdescription%></li>
+        <li><%=doc.description%></li>
+        <li><%=doc.baohanh%></li>
+        <li><%=doc.index%></li>
+        <li><img src="/<%=doc.image%>" >  </li>
+
+    </ul>
+    <a href="/camera/edit/<%=doc._id%>"><button id="sua">Edit</button></a>
+
+  </body>
+</html>

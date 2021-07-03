@@ -1,0 +1,35 @@
+
+
+  <h2>Danh sách NSX</h2>
+    <h2>Tổng số NSX <%=nsxs.count%></h2>
+    <a href="/nsx/nsx-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên NSX</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    <% for(var i=0;i<nsxs.count;i++){ %>
+        <tr>
+        <td> <%=nsxs.nsx[i].name %> </td>
+
+        <td><a href="/nsx/edit/<%=nsxs.nsx[i]._id %>">Sửa</a></td>
+        <td><a class="delete-nsx" data-id="<%=nsxs.nsx[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

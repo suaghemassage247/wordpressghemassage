@@ -1,0 +1,35 @@
+
+
+  <h2>Danh sách phanloai</h2>
+    <h2>Tổng số phanloai <%=phanloais.count%></h2>
+    <a href="/phanloai/phanloai-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên phanloai</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    <% for(var i=0;i<phanloais.count;i++){ %>
+        <tr>
+        <td> <%=phanloais.phanloai[i].name %> </td>
+
+        <td><a href="/phanloai/edit/<%=phanloais.phanloai[i]._id %>">Sửa</a></td>
+        <td><a class="delete-phanloai" data-id="<%=phanloais.phanloai[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

@@ -1,0 +1,29 @@
+
+
+  <h2>Danh sách loại bài viết</h2>
+    <h2>Tổng số  <%=typeposts.count%></h2>
+    <a href="/typepost/typepost-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên loại tin tức</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    <% for(var i=0;i<typeposts.count;i++){ %>
+        <tr>
+        <td> <%=typeposts.typepost[i].name %> </td>
+
+        <td><a href="/typepost/edit/<%=typeposts.typepost[i]._id %>">Sửa</a></td>
+        <td><a class="delete-typepost" data-id="<%=typeposts.typepost[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
