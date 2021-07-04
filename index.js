@@ -62,10 +62,8 @@ app.use(Passport.session());
 //mongoose.connect('mongodb://localhost:27017/mayvp',{useMongoClient:true});
 
 //mongoose.connect('mongodb://atlasghemassage:ghemassage123@cluster0-shard-00-00-qm2ug.mongodb.net:27017,cluster0-shard-00-01-qm2ug.mongodb.net:27017,cluster0-shard-00-02-qm2ug.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',{useUnifiedTopology: true,useNewUrlParser: true});
-mongoose.connect('mongodb://suaghemassage247:ghemassage123@cluster0-shard-00-00.hmjgb.mongodb.net:27017,cluster0-shard-00-01.hmjgb.mongodb.net:27017,cluster0-shard-00-02.hmjgb.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-4wz0jc-shard-0&authSource=admin&retryWrites=true&w=majority',{useUnifiedTopology: true,useNewUrlParser: true});
+mongoose.connect('mongodb://suaghemassage247:ghemassage123@cluster0-shard-00-00.azihu.mongodb.net:27017,cluster0-shard-00-01.azihu.mongodb.net:27017,cluster0-shard-00-02.azihu.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-8thwae-shard-0&authSource=admin&retryWrites=true&w=majority',{useUnifiedTopology: true,useNewUrlParser: true});
 
-//mongodb_url='mongodb+srv://atlasghemassage:ghemassage123@cluster0-qm2ug.mongodb.net/test?retryWrites=true&w=majority';
-//mongoose.connect(mongodb_url,{useUnifiedTopology: true,useNewUrlParser: true});
 mongoose.Promise=global.Promise;
 
 //render scss sang css
@@ -128,6 +126,7 @@ app.post('/uploader/upload', browser.upload);
 //end upload image ckeditor
 
 //begin Passport4
+
 app.get('/admin/loginok',(req,res)=>{res.render('backend/login/loginok')});
 app.get('/admin/login',(req,res)=>res.render('backend/login/login',{layout:false}));
 app.post('/admin/login',Passport.authenticate('local',{
