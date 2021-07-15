@@ -1,0 +1,78 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-maytinh-mb">
+          <div class="tabslink">
+            <a href="/may-photocopy" class="active">
+                Photocopy
+            </a>
+            <a href="/may-in" class="">
+                Máy In
+            </a>
+            <a href="/cho-thue-may-photocopy-fuji-xerox" class="">
+                Dịch Vụ<br>Cho Thuê
+            </a>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wrapper-product-mb">
+        <div class="choosedfilter">
+          <a href="/may-photocopy">Máy Photocopy Fuji-xerox
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+
+        <ul class="homeproduct filter-cate">
+            <% if(xerox.count<2){ %>
+              <li class="item" >
+            <a href="/<%=xerox.xeroxs[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=xerox.xeroxs[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=xerox.xeroxs[0].name %></h3>
+                    <div class="price">
+                        <strong><%=xerox.xeroxs[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-xerox.xeroxs[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=xerox.xeroxs[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<xerox.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=xerox.xeroxs[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=xerox.xeroxs[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=xerox.xeroxs[i].name %></h3>
+                    <div class="price">
+                        <strong><%=xerox.xeroxs[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-xerox.xeroxs[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=xerox.xeroxs[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+          <a href="/may-photocopy" class="viewmore">Xem thêm <%=xerox.count%>  sản phẩm </a>
+
+      </div>
+    </div>
+
+  </div>

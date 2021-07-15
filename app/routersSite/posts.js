@@ -7,6 +7,6 @@ const PostController= require("../controllers/site/posts");
  var urlencodedParser = bodyParser.urlencoded({ extended: false })
 // mongoose.connect('mongodb://localhost/ghemassage',{useMongoClient:true});
 // mongoose.Promise = global.Promise;
-router.get('/:titleseo',PostController.posts_get_titleseo);
+router.get('/tin-tuc/:titleseo',PostController.posts_get_titleseo);
 
 module.exports = router;

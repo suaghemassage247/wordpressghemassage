@@ -1,0 +1,246 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-maytinh-mb">
+        <div class="tabslink ">
+          <a href="/camera-quan-sat-trong-nha" class="active">
+              Camera<br>Trong Nhà
+          </a>
+          <a href="/camera-quan-sat-ngoai-troi" class="">
+              Camera<br>Ngoài Trời
+          </a>
+          <a href="/dau-ghi-hinh" class="">
+              Đầu<br>Ghi Hình
+          </a>
+        </div>
+          <div class="caption-lt">
+            <h2>Chọn Camera theo nhu cầu</h2>
+          </div>
+          <div class="lt-nhucau">
+            <a href="/camera-quan-sat-trong-nha">
+              <img src="/assest/image/camera-trong-nha.png" alt="Camera Quan Sát Trong Nhà" >
+            </a>
+            <a href="/camera-quan-sat-ngoai-troi">
+              <img src="/assest/image/camera-ngoai-troi.png" alt="Camera Quan Sát Ngoài Trời" >
+            </a>
+            <a href="/camera-ip">
+              <img src="/assest/image/camera-ip.png" alt="Camera IP Wifi" >
+            </a>
+            <a href="/dau-ghi-hinh">
+                <img src="/assest/image/dau-ghi-hinh.png" alt="Đầu Ghi Hình" >
+            </a>
+
+          </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wrapper-product-mb">
+
+        <div class="choosedfilter">
+          <a href="/camera-quan-sat-trong-nha">Camera Trong Nhà
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% if(cameratrongnha.count<2){ %>
+              <li class="item" >
+            <a href="/<%=cameratrongnha.cameras[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=cameratrongnha.cameras[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=cameratrongnha.cameras[0].name %></h3>
+                    <div class="price">
+                        <strong><%=cameratrongnha.cameras[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-cameratrongnha.cameras[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=cameratrongnha.cameras[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<cameratrongnha.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=cameratrongnha.cameras[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=cameratrongnha.cameras[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=cameratrongnha.cameras[i].name %></h3>
+                    <div class="price">
+                        <strong><%=cameratrongnha.cameras[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-cameratrongnha.cameras[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=cameratrongnha.cameras[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+        <a href="/camera-quan-sat-trong-nha" class="viewmore">Xem thêm <%=cameratrongnha.count%>  Camera Trong Nhà </a>
+
+        <div class="choosedfilter">
+          <a href="/camera-quan-sat-ngoai-troi">Camera Quan Sát Ngoài Trời
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% if(camerangoaitroi.count<2){ %>
+              <li class="item" >
+            <a href="/<%=camerangoaitroi.cameras[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=camerangoaitroi.cameras[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=camerangoaitroi.cameras[0].name %></h3>
+                    <div class="price">
+                        <strong><%=camerangoaitroi.cameras[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-camerangoaitroi.cameras[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=camerangoaitroi.cameras[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<camerangoaitroi.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=camerangoaitroi.cameras[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=camerangoaitroi.cameras[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=camerangoaitroi.cameras[i].name %></h3>
+                    <div class="price">
+                        <strong><%=camerangoaitroi.cameras[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-camerangoaitroi.cameras[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=camerangoaitroi.cameras[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+        <a href="/camera-quan-sat-ngoai-troi" class="viewmore">Xem thêm <%=camerangoaitroi.count%>  Camera Ngoài Trời </a>
+
+        <div class="choosedfilter">
+          <a href="/camera-ip">Camera IP Wifi
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% if(cameraip.count<2){ %>
+              <li class="item" >
+            <a href="/<%=cameraip.cameras[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=cameraip.cameras[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=cameraip.cameras[0].name %></h3>
+                    <div class="price">
+                        <strong><%=cameraip.cameras[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-cameraip.cameras[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=cameraip.cameras[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<cameraip.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=cameraip.cameras[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=cameraip.cameras[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=cameraip.cameras[i].name %></h3>
+                    <div class="price">
+                        <strong><%=cameraip.cameras[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-cameraip.cameras[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=cameraip.cameras[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+        <a href="/camera-ip" class="viewmore">Xem thêm <%=cameraip.count%>  Camera IP </a>
+        <div class="choosedfilter">
+          <a href="/dau-ghi-hinh">Đầu Ghi Hình
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+        <ul class="homeproduct filter-cate">
+            <% if(daughihinh.count<2){ %>
+              <li class="item" >
+            <a href="/<%=daughihinh.cameras[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=daughihinh.cameras[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=daughihinh.cameras[0].name %></h3>
+                    <div class="price">
+                        <strong><%=daughihinh.cameras[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-daughihinh.cameras[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=daughihinh.cameras[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<daughihinh.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=daughihinh.cameras[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=daughihinh.cameras[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=daughihinh.cameras[i].name %></h3>
+                    <div class="price">
+                        <strong><%=daughihinh.cameras[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-daughihinh.cameras[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=daughihinh.cameras[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+        <a href="/dau-ghi-hinh" class="viewmore">Xem thêm <%=daughihinh.count%>  Đầu Ghi Hình </a>
+      </div>
+    </div>
+
+  </div>

@@ -5,7 +5,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
   // Define changes to default configuration here. For example:
-    config.language = 'en';
+    config.language = 'vn';
     // config.uiColor = '#AADC6E';
     config.htmlEncodeOutput = false;
     config.entities = false;

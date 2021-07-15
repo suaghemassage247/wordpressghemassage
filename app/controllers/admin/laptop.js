@@ -6,7 +6,7 @@ const Nhucau = require("../../models/nhucaulaptop");
 exports.laptops_get_all =(req, res, next) => {
   if(req.isAuthenticated()){
     Laptop.find()
-      .select("_id name nameseo phanloai  nsx nhucau price tinhnang description  baohanh index image imagedefault")
+      .select("_id name nameseo phanloai  nsx nhucau price tinhnang description baohanh index image imagedefault")
       .exec()
       .then(docs => {
         const response = {
@@ -200,7 +200,7 @@ exports.laptops_update_laptop_edit = (req, res, next) => {
       doc.nhucau=req.body.nhucau;
       doc.price=req.body.price;
       doc.tinhnang=req.body.tinhnang;
-      doc.description= req.body.description;
+      doc.description=req.body.description;
       doc.baohanh=req.body.baohanh;
       doc.index=req.body.index;
       doc.save();
@@ -213,7 +213,7 @@ exports.laptops_update_laptop_edit = (req, res, next) => {
      doc.nhucau=req.body.nhucau;
      doc.price=req.body.price;
      doc.tinhnang=req.body.tinhnang;
-     doc.description= req.body.description;
+     doc.description=req.body.description;
      doc.baohanh=req.body.baohanh;
      doc.index=req.body.index;
      doc.image=req.files['image'];
@@ -227,7 +227,7 @@ exports.laptops_update_laptop_edit = (req, res, next) => {
      doc.nhucau=req.body.nhucau;
      doc.price=req.body.price;
      doc.tinhnang=req.body.tinhnang;
-     doc.description= req.body.description;
+     doc.description=req.body.description;
      doc.baohanh=req.body.baohanh;
      doc.index=req.body.index;
      doc.imagedefault=req.files['imagedefault'];
@@ -241,7 +241,7 @@ exports.laptops_update_laptop_edit = (req, res, next) => {
      doc.nhucau=req.body.nhucau;
      doc.price=req.body.price;
      doc.tinhnang=req.body.tinhnang;
-     doc.description= req.body.description;
+     doc.description=req.body.description;
      doc.baohanh=req.body.baohanh;
      doc.index=req.body.index;
      doc.imagedefault=req.files['imagedefault'];

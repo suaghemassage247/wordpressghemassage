@@ -1,0 +1,78 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="wrapper-maytinh-mb">
+          <div class="tabslink">
+            <a href="/may-photocopy" class="">
+                Photocopy
+            </a>
+            <a href="/may-in" class="active">
+                Máy In
+            </a>
+            <a href="/cho-thue-may-photocopy-fuji-xerox" class="">
+                Dịch Vụ<br>Cho Thuê
+            </a>
+          </div>
+
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="wrapper-product-mb">
+        <div class="choosedfilter">
+          <a href="/may-photocopy">Máy Photocopy Fuji-xerox
+            <i class="icontgdd-clearfil fa fa-times"></i>
+          </a>
+        </div>
+
+        <ul class="homeproduct filter-cate">
+            <% if(canon.count<2){ %>
+              <li class="item" >
+            <a href="/<%=canon.canons[0].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=canon.canons[0].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=canon.canons[0].name %></h3>
+                    <div class="price">
+                        <strong><%=canon.canons[0].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-canon.canons[0].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=canon.canons[0].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+              <% } else{for(var i=0;i<canon.count;i++){ %>
+
+              <li class="item" >
+            <a href="/<%=canon.canons[i].nameseo %>">
+                <aside class="left">
+                  <img  src="/assest/image/<%=canon.canons[i].imagedefault[0].originalname %>">
+                </aside>
+                <aside class="right">
+                    <h3><%=canon.canons[i].name %></h3>
+                    <div class="price">
+                        <strong><%=canon.canons[i].price %>₫</strong>
+                    </div>
+                    <div class="para">
+                      <%-canon.canons[i].tinhnang %>
+                    </div>
+                </aside>
+            </a>
+                <div class="button">
+                    <a href="/<%=canon.canons[i].nameseo %>" class="btn_buynow">Mua</a>
+                </div>
+              </li>
+            <% }} %>
+        </ul>
+          <a href="/may-in" class="viewmore">Xem thêm <%=canon.count%>  sản phẩm </a>
+
+      </div>
+    </div>
+
+  </div>

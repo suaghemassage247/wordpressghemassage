@@ -29,7 +29,7 @@ const upload = multer({
  limits:{fileSize:1024 * 1024 * 5},
  fileFilter:fileFilter
 });
-var cpUpload = upload.fields([{ name: 'imagedefault', maxCount: 1 }, { name: 'image', maxCount: 8 }])
+var cpUpload = upload.fields([{ name: 'imagedefault', maxCount: 1 }, { name: 'image', maxCount: 10 }])
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.get('/laptop',laptopController.laptops_get_all);
