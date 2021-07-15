@@ -1,25 +1,21 @@
 const mongoose = require("mongoose");
 const Order = require("../../models/order");
-const Laptop = require("../../models/laptop");
+const Camera = require("../../models/camera");
 
 exports.orders_get_all = (req, res, next) => {
   Order.find()
-    .select(" _id product totalprice address name phone email note")
+    .select("camera quantity _id ")
+    .populate("camera","name" )
     .exec()
     .then(docs => {
+      console.info(docs);
       const response={
         count: docs.length,
         orders: docs.map(doc => {
           return {
             _id: doc._id,
-            product:doc.product,
-            totalprice:doc.totalprice,
-            cart:doc.cart,
-            address: doc.address,
-            name: doc.name,
-            phone: doc.phone,
-            email: doc.email,
-            note: doc.note,
+            camera: doc.camera,
+            quantity: doc.quantity,
             request: {
               type: "GET",
               url: "http://localhost:3000/orders/" + doc._id
@@ -27,7 +23,7 @@ exports.orders_get_all = (req, res, next) => {
           };
         })
       }
-      res.render('backend/camera/orders-get-all',{response:response,layout:'layouts/layoutsadmin'})
+      res.render('backend/camera/orders-all',{response:response,layout:'layouts/layoutsadmin'})
     })
     .catch(err => {
       res.status(500).json({
@@ -80,9 +76,9 @@ exports.orders_add_order=(req,res,next)=>{
     })
 }
 exports.orders_create_order = (req, res, next) => {
-  Laptop.findById(req.body.laptopId)
-    .then(laptop => {
-      if (!laptop) {
+  Camera.findById(req.body.cameraId)
+    .then(camera => {
+      if (!camera) {
         return res.status(404).json({
           message: "Ghemassage not found"
         });
@@ -90,7 +86,7 @@ exports.orders_create_order = (req, res, next) => {
       const order = new Order({
         _id: new mongoose.Types.ObjectId(),
         quantity: req.body.quantity,
-        laptop: req.body.laptopId
+        camera: req.body.cameraId
       });
       return order.save();
     })
@@ -100,7 +96,7 @@ exports.orders_create_order = (req, res, next) => {
         message: "Order stored",
         createdOrder: {
           _id: result._id,
-          laptop: result.laptop,
+          camera: result.camera,
           quantity: result.quantity
         },
         request: {

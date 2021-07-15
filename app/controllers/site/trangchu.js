@@ -32,7 +32,7 @@ exports.trangchu_get_home = (req, res, next) => {
             };
             Post.find()
                  .select("_id title titleseo shortdescription description day ogtitle ogdescription keywords typepost image index")
-                 .limit(6)
+
                  .sort('index')
                  .exec()
                  .then(docs => {
@@ -88,7 +88,37 @@ exports.trangchu_get_home = (req, res, next) => {
                                }
                              })
                            };
-            res.render('mobile/homemobile',{danhmucall:danhmucall,poststuvan:poststuvan,laptopall:laptopall,layout:'layouts/layoutmobile/layoutmobile'});
+                           Post.find({typepost:"ghế massage"})
+                                .select("_id title titleseo shortdescription description day ogtitle ogdescription keywords typepost image index")
+                                .limit(100)
+                                .sort('index')
+                                .exec()
+                                .then(docs => {
+                                  const poststintucghemassage = {
+                                    count: docs.length,
+                                    post: docs.map(doc => {
+                                      return {
+                                        title: doc.title,
+                                        titleseo: doc.titleseo,
+                                        shortdescription: doc.shortdescription,
+                                        _id: doc._id,
+                                        description:doc.description,
+                                        day:doc.day,
+                                        ogtitle:doc.ogtitle,
+                                        ogdescription:doc.ogdescription,
+                                        keywords:doc.keywords,
+                                        typepost:doc.typepost,
+                                        image:doc.image,
+                                        index:doc.index,
+                                        request: {
+                                          type: "GET",
+                                          url: "http://localhost:3000/ghemassages/" + doc._id
+                                        }
+                                      };
+                                    })
+                                  };
+            res.render('mobile/homemobile',{poststintucghemassage:poststintucghemassage,danhmucall:danhmucall,poststuvan:poststuvan,laptopall:laptopall,layout:'layouts/layoutmobile/layoutmobile'});
+          })
           })
           })
           })
@@ -122,50 +152,68 @@ exports.trangchu_get_home = (req, res, next) => {
                 }
               })
             };
-            Slidehome.find()
-                .select("_id  image title index")
-                .sort('index')
-                .exec()
-                .then(docs => {
-                    var slideall = {
-                      count: docs.length,
-                      slides: docs.map(doc => {
-                        return {
-                          image: doc.image,
-                          title:doc.title,
-                            _id: doc._id,
-                          index:doc.index,
-                          request: {
-                            type: "GET",
-                            url: "http://localhost:3000/slide/" + doc._id
-                          }
-                        }
-                      })
-                    };
-                    Bannerfix.find()
-                        .select("_id  image title index")
+            Post.find({typepost:"ghế massage"})
+                 .select("_id title titleseo shortdescription description day ogtitle ogdescription keywords typepost image index")
+                 .limit(100)
+                 .sort('index')
+                 .exec()
+                 .then(docs => {
+                   const poststintucghemassage = {
+                     count: docs.length,
+                     post: docs.map(doc => {
+                       return {
+                         title: doc.title,
+                         titleseo: doc.titleseo,
+                         shortdescription: doc.shortdescription,
+                         _id: doc._id,
+                         description:doc.description,
+                         day:doc.day,
+                         ogtitle:doc.ogtitle,
+                         ogdescription:doc.ogdescription,
+                         keywords:doc.keywords,
+                         typepost:doc.typepost,
+                         image:doc.image,
+                         index:doc.index,
+                         request: {
+                           type: "GET",
+                           url: "http://localhost:3000/ghemassages/" + doc._id
+                         }
+                       };
+                     })
+                   };
+                   Post.find({typepost:"tintuc"})
+                        .select("_id title titleseo shortdescription description day ogtitle ogdescription keywords typepost image index")
+                        .limit(10)
                         .sort('index')
                         .exec()
                         .then(docs => {
-                            var bannerfixall = {
-                              count: docs.length,
-                              banners: docs.map(doc => {
-                                return {
-                                  image: doc.image,
-                                  title:doc.title,
-                                    _id: doc._id,
-                                  index:doc.index,
-                                  request: {
-                                    type: "GET",
-                                    url: "http://localhost:3000/bannerfix/" + doc._id
-                                  }
+                          const poststintuc = {
+                            count: docs.length,
+                            post: docs.map(doc => {
+                              return {
+                                title: doc.title,
+                                titleseo: doc.titleseo,
+                                shortdescription: doc.shortdescription,
+                                _id: doc._id,
+                                description:doc.description,
+                                day:doc.day,
+                                ogtitle:doc.ogtitle,
+                                ogdescription:doc.ogdescription,
+                                keywords:doc.keywords,
+                                typepost:doc.typepost,
+                                image:doc.image,
+                                index:doc.index,
+                                request: {
+                                  type: "GET",
+                                  url: "http://localhost:3000/ghemassages/" + doc._id
                                 }
-                              })
-                            };
-              res.render('fontend/trangchu',{danhmucall:danhmucall,slideall:slideall,bannerfixall:bannerfixall,layout:'layouts/layoutadmin'});
-            })
+                              };
+                            })
+                          };
+              res.render('fontend/trangchu',{poststintuc:poststintuc,poststintucghemassage:poststintucghemassage,danhmucall:danhmucall,layout:'layouts/layout'});
           })
         })
+      })
         .catch(err => {
               console.log(err);
               res.status(500).json({

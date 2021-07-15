@@ -1,31 +1,52 @@
-<!----<div class="banner">
+<div class="banner">
   <div class="slide-banner">
-    <aside class="slideshow">
-      <div id="sync1" class="owl-carousel">
-        <% for(var k=0;k<slideall.count;k++){ %>
-
-          <div class="item">
-            <img src="assest/image/<%=slideall.slides[0].image %>" >
-          </div>
-        <% } %>
+    <div class="image-banner">
+    </div>
+    <div class="content-banner">
+      <div class="title-content-banner">
+          TRUNG TÂM SỬA CHỮA GHẾ MASSAGE MIỀN BẮC
       </div>
-      <div id="sync2" class="owl-carousel ">
-        <% for(var h=0;h<slideall.count;h++){ %>
-          <div class="item">
-            <h3 class="title-slide"><%=slideall.slides[h].title%></h3>
-          </div>
-          <% } %>
+      <div class="title-hotline">
+        TƯ VẤN & CSKH:
+        <a href="tel:0989890248"> 09.89.89.0248</a>
       </div>
-    </aside>
+      <div class="title-main-content">
+        Dịch vụ sửa chữa 24/7:
+      </div>
+      <div class="content-1">
+        	&rsaquo; Sửa chữa ghế massage : mạch, motor, dây curoa, điều khiển...
+      </div>
+      <div class="content-1">
+        	&rsaquo; Bọc lại da ghế massage, ghế sofa, nệm massage...
+      </div>
+      <div class="content-1">
+        	&rsaquo; Mua bán ghế massage cũ mới
+      </div>
+      <div class="content-1">
+        	&rsaquo;Tháo lắp, vận chuyển ghế massage theo yêu cầu
+      </div>
+      <div class="content-bottom">
+        &rarr;	Sửa Chữa Tại Nhà - Linh Kiện Chính Hãng - Bảo Hành Dài Lâu  	&larr;
+      </div>
+    </div>
   </div>
   <div class="banner-fix">
-    <% for(var i=0;i<bannerfixall.count;i++) {%>
-    <div class="banner1">
-      <a href=""><img src="assest/image/<%=bannerfixall.banners[i].image%>"></a>
+    <div class="title-banner-right">
+      Cập Nhật Tin Tức Mới Nhất
     </div>
-   <% } %>
+    <div class="content-right">
+      <ul class="list-tintuc">
+      <% for(var i=0;i<poststintuc.count;i++){ %>
+          <li>
+            	&rarr;  <a href="/<%=poststintuc.post[i].titleseo%>">
+                  <%=poststintuc.post[i].title%>
+               </a>
+          </li>
+        <%}%>
+      </ul>
+    </div>
   </div>
-</div>---->
+</div>
 <div class="contain-detail">
   <div class="list-danhmuc">
     <div class="text-danhmuc">DANH MỤC</div>
@@ -40,6 +61,20 @@
           </div>
       </li>
       <% } %>
+    </ul>
+  </div>
+  <div class="list-dich-vu">
+    <div class="title-dich-vu">
+      <p>DỊCH VỤ GHẾ MASSAGE MIỀN BẮC </p>
+    </div>
+    <ul class="list-item-dich-vu">
+          <% for(var i=0;i<poststintucghemassage.count;i++){ %>
+        <li>
+            &rarr;  <a href="/<%=poststintucghemassage.post[i].titleseo%>">
+                <%=poststintucghemassage.post[i].title%>
+             </a>
+        </li>
+      <%}%>
     </ul>
   </div>
 </div>
